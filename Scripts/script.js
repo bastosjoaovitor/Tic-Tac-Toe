@@ -10,11 +10,13 @@ function mark(number) {
         }
         moves++;
         if (checkWinner()) {
+            blockInteractions();
             win(choice.innerText);
             setTimeout(function() {
                 reset();
             }, 2000)
         } else if (moves == 9) {
+            blockInteractions();
             draw();
             setTimeout(function() {
                 reset();
@@ -76,4 +78,20 @@ function reset() {
         document.getElementById(`choice-${i}`).innerText = '';
     }
     moves = 0;
+    unblockInteractions();
+}
+
+function blockInteractions() {
+    document.addEventListener('click', blockEvent, true);
+    document.addEventListener('touchstart', blockEvent, true);
+}
+
+function unblockInteractions() {
+    document.removeEventListener('click', blockEvent, true);
+    document.removeEventListener('touchstart', blockEvent, true);
+}
+
+function blockEvent(event) {
+    event.stopPropagation();
+    event.preventDefault();
 }
