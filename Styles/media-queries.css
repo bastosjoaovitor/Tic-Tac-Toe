@@ -10,6 +10,7 @@
     table tr td {
         font-size: 110pt;
         width: 200px;
-        height: 200px;
+        max-height: 80vh;
+        height: 20vh;
     }
 }
