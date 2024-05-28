@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+@media only screen and (orientation: landscape) {
+
+    table {
+        width: 600px;
+        height: 600px;
+    }
+
+    table tr td {
+        font-size: 110pt;
+        width: 200px;
+        height: 200px;
+    }
+}
